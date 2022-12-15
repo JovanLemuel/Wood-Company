@@ -8,7 +8,7 @@
             <h1 class="text-white text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold mb-12">
                 Source of quality wood</h1>
             <a href="/catalog"
-                class="inline-block bg-yellow-800 text-white uppercase text-sm tracking-widest font-heading px-8 py-4">Check
+                class="inline-block bg-yellow-800 hover:bg-yellow-900 text-white uppercase text-sm tracking-widest font-heading px-8 py-4">Check
                 catalog</a>
         </div>
 

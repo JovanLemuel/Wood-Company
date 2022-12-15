@@ -1,4 +1,4 @@
-<div class="h-24 z-50 relative container mx-auto px-6 grid grid-cols-3">
+<div class="h-24 z-50 relative container mx-auto px-6">
 
     <div x-data="{ showMenu: false }" class="flex items-center">
         <button x-on:click="showMenu = true">
@@ -36,7 +36,6 @@
         </div>
 
         <div class="flex items-center justify-end">
-            <!-- contact button -->
             <a href="/contact">
                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
