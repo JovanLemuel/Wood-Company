@@ -11,14 +11,14 @@
             <a href="/blog" class="block mb-4">Blog</a>
         </div>
         <div>
-            <div class="font-display text-white uppercase text-sm tracking-widest mb-6">Helpful Links
+            <div class="font-display text-white uppercase text-sm tracking-widest mb-6">More info
             </div>
             <a href="/about" class="block mb-4">About</a>
             <a href="/catalog" class="block mb-4">Catalog</a>
             <a href="/blog" class="block mb-4">Blog</a>
         </div>
         <div>
-            <div class="font-display text-white uppercase text-sm tracking-widest mb-6">Find Out More
+            <div class="font-display text-white uppercase text-sm tracking-widest mb-6">More info
             </div>
             <a href="/about" class="block mb-4">About</a>
             <a href="/catalog" class="block mb-4">Catalog</a>

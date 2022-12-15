@@ -1,7 +1,6 @@
 <div class="h-24 z-50 relative container mx-auto px-6 grid grid-cols-3">
 
     <div x-data="{ showMenu: false }" class="flex items-center">
-        <!-- menu button -->
         <button x-on:click="showMenu = true">
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg">
@@ -31,8 +30,7 @@
 
         <div class="flex items-center justify-center">
             <a href="/" class="text-white uppercase font-bold text-2xl tracking-widest">
-                <!-- logo -->
-                {{-- <img src="{{ settings . logo }}" class="h-20 w-64 object-contain object-center" /> --}}
+                <img src="/images/logo.png" alt="website-logo"class="h-20 w-64 object-contain object-center" />
                 Wood Company
             </a>
         </div>

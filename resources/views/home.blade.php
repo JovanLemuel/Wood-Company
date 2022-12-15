@@ -22,31 +22,6 @@
             class="w-full h-full absolute inset-0 object-cover opacity-70" />
     </div>
 
-    {{-- {% for post in collections.blogs | reverse | limit(1) %}
-    <div class="grid grid-cols-1 md:grid-cols-2">
-
-        <div class="bg-white p-12 md:p-24 flex justify-end items-center">
-            <a href="{{ post . url }}">
-                <img src="{{ post . data . image }}" class="w-full max-w-md" />
-            </a>
-        </div>
-
-        <div class="bg-gray-100 p-12 md:p-24 flex justify-start items-center">
-            <div class="max-w-md">
-                <div class="w-24 h-2 bg-yellow-800 mb-4"></div>
-                <h2 class="font-display font-bold text-2xl md:text-3xl lg:text-4xl mb-6">{{ post . data . title }}</h2>
-                <p class="font-light text-gray-600 text-sm md:text-base mb-6 leading-relaxed">
-                    {{ post . data . description }}
-                </p>
-                <a href="{{ post . url }}"
-                    class="inline-block border-2 border-yellow-800 font-light text-yellow-800 text-sm uppercase tracking-widest py-3 px-8 hover:bg-yellow-800 hover:text-white">Read
-                    more</a>
-            </div>
-        </div>
-
-    </div>
-    {% endfor %} --}}
-
     <img src="/images/wood-banner.jpeg" alt="home-image-2" class="w-full h-screen object-cover" />
 
     <div class="max-w-xl mx-auto text-center py-24 md:py-32">
@@ -55,43 +30,6 @@
         <p class="font-light text-gray-600 mb-6 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing
             elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
-
-    {{-- <div class="flex flex-wrap bg-black">
-        {% for category in collections.category | reverse | limit(3) %}
-        <a href="{{ category . url }}"
-            class="bg-black relative w-full md:w-auto md:flex-1 flex items-center justify-center h-72 font-heading text-white uppercase tracking-widest hover:opacity-75">
-            <div class="relative z-10">{{ category . data . title }}</div>
-            <img src="{{ category . data . image }}" class="absolute inset-0 w-full h-full object-cover opacity-50" />
-        </a>
-        {% endfor %}
-    </div> --}}
-
-
-
-    {{-- {% for post in collections.blogs | reverse | limit(1, 1) %}
-    <div class="grid grid-cols-1 md:grid-cols-2">
-
-        <div class="bg-white p-12 md:p-24 flex justify-start items-center">
-            <a href="{{ post . url }}">
-                <img src="{{ post . data . image }}" class="w-full max-w-md" />
-            </a>
-        </div>
-
-        <div class="md:order-first bg-gray-100 p-12 md:p-24 flex justify-end items-center">
-            <div class="max-w-md">
-                <div class="w-24 h-2 bg-yellow-800 mb-4"></div>
-                <h2 class="font-display font-bold text-2xl md:text-3xl lg:text-4xl mb-6">{{ post . data . title }}</h2>
-                <p class="font-light text-gray-600 text-sm md:text-base mb-6 leading-relaxed">
-                    {{ post . data . description }}
-                </p>
-                <a href="{{ post . url }}"
-                    class="inline-block border-2 border-yellow-800 font-light text-yellow-800 text-sm uppercase tracking-widest py-3 px-8 hover:bg-yellow-800 hover:text-white">Read
-                    more</a>
-            </div>
-        </div>
-
-    </div>
-    {% endfor %} --}}
 
     <div class="relative w-full py-12 px-12">
         <div class="relative z-10 text-center py-12 md:py-24">
