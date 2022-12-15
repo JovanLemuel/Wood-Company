@@ -68,7 +68,7 @@
                             class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700"></textarea>
                     </div>
                     <button
-                        class="inline-block bg-yellow-800 text-white uppercase text-sm tracking-widest font-heading px-8 py-4 mt-6">
+                        class="inline-block bg-jevon_ganteng_sekali hover:bg-jevon_ganteng_gila text-white uppercase text-sm tracking-widest font-heading px-8 py-4 mt-6">
                         Send message
                     </button>
                 </form>

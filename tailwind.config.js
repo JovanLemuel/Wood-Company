@@ -15,6 +15,12 @@ module.exports = {
                 heading: ["Fira Sans Condensed", "serif"],
                 sans: ["Overpass", "sans-serif"],
             },
+            colors: {
+                jevon_ganteng: "#171a1a",
+                jevon_ganteng_sekali: "#F88500",
+                jevon_ganteng_amat: "#FF961D",
+                jevon_ganteng_gila: "#E27F0D",
+            },
         },
     },
     plugins: [
