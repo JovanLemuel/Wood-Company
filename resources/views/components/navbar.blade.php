@@ -1,4 +1,4 @@
-<div class="h-24 z-50 relative container mx-auto px-6">
+<div class="h-24 z-50 relative container mx-auto">
 
     <div x-data="{ showMenu: false }" class="flex items-center">
         <button x-on:click="showMenu = true">

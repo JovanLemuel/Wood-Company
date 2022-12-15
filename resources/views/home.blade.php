@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div class="-mt-24 relative w-full py-12 px-12 bg-yellow-900">
+    <div class="-mt-28 relative w-full py-12 px-12 bg-yellow-900">
         <div class="relative z-10 text-center py-24 md:py-48">
             <h1 class="text-white text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold mb-12">
                 Source of quality wood</h1>
