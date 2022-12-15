@@ -7,11 +7,10 @@ module.exports = {
         "./storage/framework/views/*.php",
         "./resources/views/**/*.blade.php",
     ],
-
+    purge: ["./**/*.html"],
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Nunito", ...defaultTheme.fontFamily.sans],
                 display: ["Playfair Display", "serif"],
                 heading: ["Fira Sans Condensed", "serif"],
                 sans: ["Overpass", "sans-serif"],
@@ -19,6 +18,8 @@ module.exports = {
         },
     },
     variants: {},
-    plugins: [require("@tailwindcss/forms")],
-    plugins: [require("@tailwindcss/typography")],
+    plugins: [
+        require("@tailwindcss/typography"),
+        require("@tailwindcss/forms"),
+    ],
 };
