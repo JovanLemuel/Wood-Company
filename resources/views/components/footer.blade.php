@@ -1,19 +1,32 @@
-<footer class="p-4 bg-wood-black shadow md:flex md:items-center md:justify-between md:p-6">
-    <span class="text-sm text-gray-500 sm:text-center">© 2022 <a href="https://flowbite.com/"
-            class="hover:underline">Flowbite™</a>. All Rights Reserved.
-    </span>
-    <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 sm:mt-0">
-        <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
-        </li>
-        <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
-        </li>
-        <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
-        </li>
-        <li>
-            <a href="#" class="hover:underline">Contact</a>
-        </li>
-    </ul>
-</footer>
+<div class="bg-gray-900 text-white text-opacity-40 font-semibold uppercase text-xs tracking-widest bg-opacity-80 px-12">
+    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-4 gap-12 text-center lg:text-left py-24">
+        <div>
+            <div class="text-white opacity-50 text-4xl font-display">{{ settings . site_name }}</div>
+        </div>
+        <div>
+            <div class="font-display text-white uppercase text-sm tracking-widest mb-6">{{ footer . section_one_title }}
+            </div>
+            {% for item in footer.section_one_links %}
+            <a href="{{ item . url }}" class="block mb-4">{{ item . text }}</a>
+            {% endfor %}
+        </div>
+        <div>
+            <div class="font-display text-white uppercase text-sm tracking-widest mb-6">{{ footer . section_two_title }}
+            </div>
+            {% for item in footer.section_two_links %}
+            <a href="{{ item . url }}" class="block mb-4">{{ item . text }}</a>
+            {% endfor %}
+        </div>
+        <div>
+            <div class="font-display text-white uppercase text-sm tracking-widest mb-6">{{ footer . section_three_title }}
+            </div>
+            {% for item in footer.section_three_links %}
+            <a href="{{ item . url }}" class="block mb-4">{{ item . text }}</a>
+            {% endfor %}
+        </div>
+    </div>
+    <div
+        class="text-sm lg:text-base text-center font-heading font-light tracking-widest uppercase text-white opacity-75 pb-24">
+        {{ footer . copyright }}
+    </div>
+</div>
