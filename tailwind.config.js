@@ -8,7 +8,6 @@ module.exports = {
         "./storage/framework/views/*.php",
         "./resources/views/**/*.blade.php",
     ],
-    purge: ["./**/*.html"],
     theme: {
         extend: {
             fontFamily: {
