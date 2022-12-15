@@ -1,9 +1,9 @@
 @extends('layouts/mainlayout')
-@section('title', 'Catalog')
+@section('title', 'Blog')
 
 @section('content')
     <div class="container mt-2">
-        <h2>Catalog Page</h2>
+        <h2>Blog Page</h2>
     </div>
 
 
