@@ -18,7 +18,7 @@
             <a href="/contact" class="border-b border-white">Get in touch</a>
         </div>
 
-        <img src="https://images.unsplash.com/photo-1490129375591-2658b3e2ee50?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2244&q=80"
+        <img src="/images/wood-banner.jpeg" alt="home-image-1"
             class="w-full h-full absolute inset-0 object-cover opacity-70" />
     </div>
 
@@ -47,8 +47,7 @@
     </div>
     {% endfor %} --}}
 
-    <img src="https://images.unsplash.com/photo-1501901609772-df0848060b33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-        class="w-full h-screen object-cover" />
+    <img src="/images/wood-banner.jpeg" alt="home-image-2" class="w-full h-screen object-cover" />
 
     <div class="max-w-xl mx-auto text-center py-24 md:py-32">
         <div class="w-24 h-2 bg-yellow-800 mb-4 mx-auto"></div>
@@ -105,8 +104,7 @@
                 out more</a>
         </div>
 
-        <img src="https://images.unsplash.com/photo-1503516459261-40c66117780a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1949&q=80"
-            class="w-full h-full absolute inset-0 object-cover" />
+        <img src="/images/wood-banner.jpeg" alt="home-image-3" class="w-full h-full absolute inset-0 object-cover" />
     </div>
 
 @endsection
