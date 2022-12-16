@@ -24,20 +24,20 @@
                 class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
                 <li>
                     <a href="/"
-                        class="block py-2 pl-3 pr-4 text-gray-700 bg-jevon_ganteng_sekali rounded md:bg-transparent md:hover:text-jevon_ganteng_sekali md:p-0"
+                        class="block py-2 pl-3 pr-4 text-gray-700 hover:text-jevon_ganteng_sekali rounded md:bg-transparent md:hover:text-jevon_ganteng_sekali md:p-0"
                         aria-current="page">Home</a>
                 </li>
                 <li>
                     <a href="/contact"
-                        class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-jevon_ganteng_sekali md:p-0">Contact</a>
+                        class="block py-2 pl-3 pr-4 text-gray-700 hover:text-jevon_ganteng_sekali rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-jevon_ganteng_sekali md:p-0">Contact</a>
                 </li>
                 <li>
-                    <a href="#"
-                        class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-jevon_ganteng_sekali md:p-0">Catalog</a>
+                    <a href="/catalog"
+                        class="block py-2 pl-3 pr-4 text-gray-700 hover:text-jevon_ganteng_sekali rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-jevon_ganteng_sekali md:p-0">Catalog</a>
                 </li>
                 <li>
-                    <a href="#"
-                        class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-jevon_ganteng_sekali md:p-0">Blog</a>
+                    <a href="/blog"
+                        class="block py-2 pl-3 pr-4 text-gray-700 hover:text-jevon_ganteng_sekali rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-jevon_ganteng_sekali md:p-0">Blog</a>
                 </li>
             </ul>
         </div>
