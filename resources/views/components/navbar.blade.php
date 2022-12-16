@@ -1,8 +1,7 @@
 <nav class="bg-white px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
     <div class="container flex flex-wrap items-center justify-between mx-auto">
         <a href="/" class="flex items-center">
-            <img src="/images/logo.png" class="h-6 mr-3 sm:h-9" alt="Wood Company Logo">
-            <span class="self-center whitespace-nowrap text-2xl uppercase font-bold tracking-widest">Wood Company</span>
+            <img src="/images/Logo2.svg" class="h-6 mr-3 sm:h-9" alt="Wood Company Logo">
         </a>
         <div class="flex md:order-2">
             <button type="button"
