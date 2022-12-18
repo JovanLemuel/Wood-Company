@@ -5,7 +5,7 @@
         </a>
         <div class="flex md:order-2">
             <button type="button"
-                class="text-white bg-jevon_ganteng_sekali hover:bg-jevon_ganteng_gila focus:ring-4 focus:outline-none focus:ring-jevon_ganteng_amat font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">Login</button>
+                class="text-white uppercase font-heading tracking-widest text-sm bg-jevon_ganteng_sekali hover:bg-jevon_ganteng_gila focus:ring-4 focus:outline-none focus:ring-jevon_ganteng_amat px-5 py-2.5 text-center mr-3 md:mr-0">Login</button>
             <button data-collapse-toggle="navbar-sticky" type="button"
                 class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                 aria-controls="navbar-sticky" aria-expanded="false">
@@ -23,20 +23,20 @@
                 class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
                 <li>
                     <a href="/"
-                        class="block py-2 pl-3 pr-4 text-gray-700 hover:text-jevon_ganteng_sekali rounded md:bg-transparent md:hover:text-jevon_ganteng_sekali md:p-0"
+                        class="block py-2 pl-3 pr-4 text-gray-700 uppercase font-heading tracking-widest text-sm hover:text-jevon_ganteng_sekali rounded md:bg-transparent md:hover:text-jevon_ganteng_sekali md:p-0"
                         aria-current="page">Home</a>
                 </li>
                 <li>
                     <a href="/contact"
-                        class="block py-2 pl-3 pr-4 text-gray-700 hover:text-jevon_ganteng_sekali rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-jevon_ganteng_sekali md:p-0">Contact</a>
+                        class="block py-2 pl-3 pr-4 text-gray-700 uppercase font-heading tracking-widest text-sm hover:text-jevon_ganteng_sekali rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-jevon_ganteng_sekali md:p-0">Contact</a>
                 </li>
                 <li>
                     <a href="/catalog"
-                        class="block py-2 pl-3 pr-4 text-gray-700 hover:text-jevon_ganteng_sekali rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-jevon_ganteng_sekali md:p-0">Catalog</a>
+                        class="block py-2 pl-3 pr-4 text-gray-700 uppercase font-heading tracking-widest text-sm hover:text-jevon_ganteng_sekali rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-jevon_ganteng_sekali md:p-0">Catalog</a>
                 </li>
                 <li>
                     <a href="/blog"
-                        class="block py-2 pl-3 pr-4 text-gray-700 hover:text-jevon_ganteng_sekali rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-jevon_ganteng_sekali md:p-0">Blog</a>
+                        class="block py-2 pl-3 pr-4 text-gray-700 uppercase font-heading tracking-widest text-sm hover:text-jevon_ganteng_sekali rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-jevon_ganteng_sekali md:p-0">Blog</a>
                 </li>
             </ul>
         </div>
