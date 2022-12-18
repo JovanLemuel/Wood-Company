@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div class="-mt-28 relative w-full py-12 px-12 bg-jevon_ganteng_gila">
+    <div class="mt-16 relative w-full py-12 px-12 bg-jevon_ganteng_gila">
         <div class="relative z-10 text-center py-24 md:py-48">
             <h1 class="text-white text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold mb-12">
                 Source of quality wood</h1>
@@ -14,12 +14,11 @@
 
         <div
             class="relative z-10 mx-auto max-w-4xl flex justify-between uppercase text-white font-heading tracking-widest text-sm">
-            <a href="/contact" class="border-b border-white">Find out more</a>
-            <a href="/contact" class="border-b border-white">Get in touch</a>
+            <a href="/contact" class="border-b border-white hover:border-transparent">Find out more</a>
+            <a href="/contact" class="border-b border-white hover:border-transparent">Get in touch</a>
         </div>
 
-        <img src="/images/wood-banner.jpeg" alt="home-image-1"
-            class="w-full h-full absolute inset-0 object-cover opacity-70" />
+        <img src="/images/wood-banner.jpeg" alt="home-image-1" class="w-full h-full absolute inset-0 object-cover" />
     </div>
 
     <img src="/images/wood-banner.jpeg" alt="home-image-2" class="w-full h-screen object-cover" />
