@@ -13,6 +13,6 @@ class Blog extends Model
         "title",
         "content",
         "type",
-        // "coverphoto"
+        "coverphoto"
     ];
 }

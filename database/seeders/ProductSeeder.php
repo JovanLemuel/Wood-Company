@@ -29,17 +29,17 @@ class ProductSeeder extends Seeder
             if ($index == 0) {
                 Product::factory()->create([
                     'image_name' => 'Product1.jpg',
-                    'supplier_name' => $supplier->name,
+                    'supplier_id' => $supplier,
                 ]);
             } else if ($index == 1) {
                 Product::factory()->create([
                     'image_name' => 'Product2.jpg',
-                    'supplier_name' => $supplier->name,
+                    'supplier_id' => $supplier,
                 ]);
             } else if ($index == 2) {
                 Product::factory()->create([
                     'image_name' => 'Product3.jpg',
-                    'supplier_name' => $supplier->name,
+                    'supplier_id' => $supplier,
                 ]);
             }
             $index++;

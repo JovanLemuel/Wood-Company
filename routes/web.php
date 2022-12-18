@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/catalog', [ProductController::class, 'index']);
+
+Route::get('/catalog/{product}', [ProductController::class, 'showcatalog']);
+
 Route::get('/', function () {
     return view('home');
 });
