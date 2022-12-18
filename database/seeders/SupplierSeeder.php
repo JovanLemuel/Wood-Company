@@ -3,11 +3,12 @@
 namespace Database\Seeders;
 
 use Faker\Factory;
-use App\Models\Blog;
+use App\Models\Product;
+use App\Models\Supplier;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class BlogSeeder extends Seeder
+class SupplierSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -22,8 +23,10 @@ class BlogSeeder extends Seeder
         $fakerRU = Factory::create('ru_RU');
         $fakerUS = Factory::create('en_US');
 
-        Blog::factory()->create([
-            'title' => $fakerID->name,
+        Supplier::factory()->create([
+            'name' => $fakerID->company,
+            'phone' => $fakerID->phoneNumber,
+            'city' => $fakerID->city,
         ]);
     }
 }

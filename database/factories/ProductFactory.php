@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Blog>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
  */
-class BlogFactory extends Factory
+class ProductFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,8 +17,8 @@ class BlogFactory extends Factory
     public function definition()
     {
         return [
-            'content' => $this->faker->text,
-            'type' => $this->faker->word,
+            'name' => $this->faker->word,
+            'description' => $this->faker->text,
         ];
     }
 }
