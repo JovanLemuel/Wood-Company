@@ -22,27 +22,5 @@ class ProductSeeder extends Seeder
         $fakerIT = Factory::create('it_IT');
         $fakerRU = Factory::create('ru_RU');
         $fakerUS = Factory::create('en_US');
-
-        $index = 0;
-
-        foreach (Supplier::all() as $supplier) {
-            if ($index == 0) {
-                Product::factory()->create([
-                    'product_image' => 'Product1.jpg',
-                    'supplier_id' => $supplier,
-                ]);
-            } else if ($index == 1) {
-                Product::factory()->create([
-                    'product_image' => 'Product2.jpg',
-                    'supplier_id' => $supplier,
-                ]);
-            } else if ($index == 2) {
-                Product::factory()->create([
-                    'product_image' => 'Product3.jpg',
-                    'supplier_id' => $supplier,
-                ]);
-            }
-            $index++;
-        }
     }
 }

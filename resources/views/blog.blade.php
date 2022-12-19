@@ -16,7 +16,7 @@
             <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
                 <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
                     <div class="flex-shrink-0">
-                        <img class="h-48 w-full object-cover" src="/images/{{ $blogs['coverphoto'] }}" alt="blog image">
+                        <img class="h-48 w-full object-cover" src="/images/{{ $blogs['blog_image'] }}" alt="blog image">
                     </div>
                     <div class="flex-1 bg-white p-6 flex flex-col justify-between">
                         <div class="flex-1">

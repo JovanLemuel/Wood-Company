@@ -14,9 +14,9 @@
                     nibh sed, efficitur sapien.</p>
             </div>
 
-            @if (Auth::check() && Auth::user()->status == 'admin')
+            {{-- @if (Auth::check() && Auth::user()->status == 'admin')
                 <a href="{{ route('products.create') }}">Create Product</a>
-            @endif
+            @endif --}}
 
             <form action="" method="GET" netlify>
                 <div>

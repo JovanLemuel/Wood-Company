@@ -22,11 +22,5 @@ class SupplierSeeder extends Seeder
         $fakerIT = Factory::create('it_IT');
         $fakerRU = Factory::create('ru_RU');
         $fakerUS = Factory::create('en_US');
-
-        Supplier::factory()->create([
-            'name' => $fakerID->company,
-            'phone' => $fakerID->phoneNumber,
-            'city' => $fakerID->city,
-        ]);
     }
 }

@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Blog extends Model
+class Mail extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        "title",
-        "content",
-        "type",
-        "blog_image"
+        "mail_name",
+        "mail_email",
+        "mail_message"
     ];
 }

@@ -21,9 +21,5 @@ class BlogSeeder extends Seeder
         $fakerIT = Factory::create('it_IT');
         $fakerRU = Factory::create('ru_RU');
         $fakerUS = Factory::create('en_US');
-
-        Blog::factory()->create([
-            'title' => $fakerID->name,
-        ]);
     }
 }
