@@ -54,14 +54,14 @@ class ProductController extends Controller
         $this->validate($request, [
             'name' => 'required|string|max:50',
             'description' => 'required|string|max:250',
-            'image_name' => 'required|image',
+            'product_image' => 'required|image',
             'supplier_id' => 'required'
         ]);
 
         Product::create([
             'name' => $request->name,
             'description' => $request->description,
-            'image_name' => $request->file('image_name')->store('productimage', 'public'),
+            'product_image' => $request->file('product_image')->store('productimage', 'public'),
             'supplier_id' => $request->supplier_id
         ]);
 
@@ -76,9 +76,9 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        $product->load('suppliers');
+        // $product->load('suppliers');
 
-        return view('catalog', [
+        return view('showcatalog', [
             'pagetitle' => 'Product',
             'product' => $product
         ]);
@@ -109,12 +109,12 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
 
-        if ($request->file('image_name')) {
-            unlink('storage/' . $product->image_name);
+        if ($request->file('product_image')) {
+            unlink('storage/' . $product->product_image);
             $product->update([
                 "name" => $request->name,
                 "description" => $request->description,
-                "image_name" => $request->file('image_name')->store('productimage', 'public')
+                "product_image" => $request->file('product_image')->store('productimage', 'public')
             ]);
         } else {
             $product->update([

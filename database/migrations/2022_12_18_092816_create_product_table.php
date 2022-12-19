@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->string("description");
-            $table->string("image_name");
+            $table->string("product_image");
             $table->foreignIdFor(\App\Models\Supplier::class);
             $table->timestamps();
         });

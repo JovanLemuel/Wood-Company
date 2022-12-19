@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string("title");
             $table->string("content");
             $table->string("type");
-            $table->string("coverphoto");
+            $table->string("blog_image");
             $table->timestamps();
         });
     }

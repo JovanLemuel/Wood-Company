@@ -22,8 +22,8 @@
         <div class="mb-3">
             <label for="">Image</label>
             <br>
-            <img src="{{ asset('storage/' . $product->image_name) }}" alt="">
-            <input type="file" name="image_name" class="form-control">
+            <img src="{{ asset('storage/' . $product->product_image) }}" alt="">
+            <input type="file" name="product_image" class="form-control">
         </div>
         <div class="mb-3">
             <label for="">Supplier</label>

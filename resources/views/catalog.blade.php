@@ -48,7 +48,7 @@
         </div>
     </div>
 
-    <table class="table">
+    {{--     <table class="table">
         <thead>
             <tr>
                 <th scope="col">No</th>
@@ -71,7 +71,7 @@
                     <td>{{ $pr['description'] }}</td>
                     <td>{{ $pr->supplier->name }}</td>
                     <td>
-                        {{-- <img src="{{ asset('storage/' . $products->image_name) }}" class="mx-auto d-block rounded-3" --}}
+                        <img src="{{ asset('storage/' . $products->product_image) }}" class="mx-auto d-block rounded-3"
                         width="140" height="130">
                     </td>
                     @if (Auth::check() && Auth::user()->status == 'admin')
@@ -92,13 +92,11 @@
                 @php($i++)
             @endforeach
         </tbody>
-    </table>
+    </table> --}}
 
-    {{ $products->links() }}
+    {{-- <h1>Supplier</h1> --}}
 
-    <h1>Supplier</h1>
-
-    <table class="table">
+    {{-- <table class="table">
         <thead>
             <tr>
                 <th scope="col">No</th>
@@ -117,7 +115,7 @@
                 </tr>
             @endforeach
         </tbody>
-    </table>
+    </table> --}}
 
 
 @endsection

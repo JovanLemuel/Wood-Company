@@ -28,17 +28,17 @@ class ProductSeeder extends Seeder
         foreach (Supplier::all() as $supplier) {
             if ($index == 0) {
                 Product::factory()->create([
-                    'image_name' => 'Product1.jpg',
+                    'product_image' => 'Product1.jpg',
                     'supplier_id' => $supplier,
                 ]);
             } else if ($index == 1) {
                 Product::factory()->create([
-                    'image_name' => 'Product2.jpg',
+                    'product_image' => 'Product2.jpg',
                     'supplier_id' => $supplier,
                 ]);
             } else if ($index == 2) {
                 Product::factory()->create([
-                    'image_name' => 'Product3.jpg',
+                    'product_image' => 'Product3.jpg',
                     'supplier_id' => $supplier,
                 ]);
             }

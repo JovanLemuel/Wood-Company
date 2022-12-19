@@ -20,9 +20,9 @@
         </div>
         <div class="mb-3">
             <label for="">Image</label>
-            <input type="file" name="image_name" class="form-control">
-            @if ($errors->has('image_name'))
-                <p class="error">{{ $errors->first('image_name') }}</p>
+            <input type="file" name="product_image" class="form-control">
+            @if ($errors->has('product_image'))
+                <p class="error">{{ $errors->first('product_image') }}</p>
             @endif
         </div>
         <div class="mb-3">

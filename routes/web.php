@@ -17,12 +17,6 @@ use App\Models\Product;
 |
 */
 
-Route::get('/catalog', [ProductController::class, 'index']);
-
-Route::get('/catalog/{product}', [ProductController::class, 'show']);
-
-Route::resource('products', ProductController::class)->middleware('admin');
-
 Route::get('/', function () {
     return view('home');
 });
@@ -30,6 +24,12 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+
+Route::get('/catalog', [ProductController::class, 'index']);
+
+Route::get('/catalog/{product}', [ProductController::class, 'show']);
+
+Route::resource('products', ProductController::class)->middleware('admin');
 
 Route::get('/cart', function () {
     return view('cart');
@@ -50,6 +50,13 @@ Route::get('/#', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get(
+    '/dashboard/admin_product',
+    [ProductController::class, 'show']
+)->middleware([
+    'auth', 'verified'
+])->name('admin_product');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
