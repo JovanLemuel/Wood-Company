@@ -1,7 +1,7 @@
 @extends('layouts/mainlayout')
 @section('content')
-    <h1>{{ $maintitle }}</h1>
-    <img src="/images/{{ $product['image_name'] }}" width="140" height="130">
+    <h1>{{ $pagetitle }}</h1>
+    <img src="{{ asset('storage/' . $product->image_name) }}" class="mx-auto d-block rounded-3" width="140" height="130">
     <h2>Name: {{ $product['name'] }}</h2>
     <h3>Description: {{ $product['description'] }}</h3>
 

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,9 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-Route::get('/catalog', [ProductController::class, 'products.index']);
+Route::get('/catalog', [ProductController::class, 'catalog']);
 
-Route::get('/catalog/{product}', [ProductController::class, 'catalog']);
+Route::get('/catalog/{product}', [ProductController::class, 'showcatalog']);
 
 Route::resource('products', ProductController::class)->middleware('admin');
 

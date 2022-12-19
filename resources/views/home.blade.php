@@ -21,7 +21,31 @@
         <img src="/images/wood-banner.jpeg" alt="home-image-1" class="w-full h-full absolute inset-0 object-cover" />
     </div>
 
-    <img src="/images/wood-banner.jpeg" alt="home-image-2" class="w-full h-screen object-cover" />
+    <div class="bg-jevon_ganteng text-white text-opacity-40 font-semibold uppercase text-xs tracking-widest px-12">
+        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-4 gap-12 text-center lg:text-left py-24">
+            <div>
+                <div class="text-white opacity-50 text-4xl font-display">Trusted for years.</div>
+            </div>
+            <div>
+                <p class="block mb-4">Thousands of clients worldwide</p>
+                <p class="block mb-4">Operating in multiple countries</p>
+                <p class="block mb-4">Wide range of suppliers</p>
+            </div>
+            <div>
+                <p class="block mb-4">Responsible partners</p>
+                <p class="block mb-4">Hundreds of employees</p>
+                <p class="block mb-4">Multiple selections of wood</p>
+            </div>
+            <div>
+                <div class="font-display text-white uppercase text-sm tracking-widest mb-6">Got any questions?
+                </div>
+                <a href="/contact"
+                    class="inline-block bg-jevon_ganteng_sekali hover:bg-jevon_ganteng_gila text-white uppercase text-sm tracking-widest font-heading px-8 py-4">Contact
+                    Us</a>
+            </div>
+        </div>
+    </div>
+
 
     <div class="max-w-xl mx-auto text-center py-24 md:py-32">
         <div class="w-24 h-2 bg-jevon_ganteng_sekali mb-4 mx-auto"></div>
