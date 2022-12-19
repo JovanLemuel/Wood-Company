@@ -21,31 +21,31 @@
                         {{ __('Product') }}
                     </x-nav-link>
                 </div>
-                {{-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('tampilan_pricelist')" :active="request()->routeIs('tampilan_pricelist')">
-                        {{ __('Pricelist') }}
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('admin_supplier')" :active="request()->routeIs('admin_supplier')">
+                        {{ __('Supplier') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('tampilan_category')" :active="request()->routeIs('tampilan_category')">
+                    <x-nav-link :href="route('admin_category')" :active="request()->routeIs('admin_category')">
                         {{ __('Category') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('tampilan_domisili')" :active="request()->routeIs('tampilan_domisili')">
-                        {{ __('Domisili') }}
+                    <x-nav-link :href="route('admin_partner')" :active="request()->routeIs('admin_partner')">
+                        {{ __('Partner') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('tampilan_booking')" :active="request()->routeIs('tampilan_booking')">
-                        {{ __('Booking') }}
+                    <x-nav-link :href="route('admin_blog')" :active="request()->routeIs('admin_blog')">
+                        {{ __('Blog') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('newpost_product')" :active="request()->routeIs('newpost_product')">
-                        {{ __('New Post') }}
+                    <x-nav-link :href="route('admin_mail')" :active="request()->routeIs('admin_mail')">
+                        {{ __('Mail') }}
                     </x-nav-link>
-                </div> --}}
+                </div>
 
             </div>
 

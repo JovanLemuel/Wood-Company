@@ -78,7 +78,7 @@ class ProductController extends Controller
     {
         // $product->load('suppliers');
 
-        return view('showcatalog', [
+        return view('admin_product', [
             'pagetitle' => 'Product',
             'product' => $product
         ]);

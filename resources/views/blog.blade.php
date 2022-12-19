@@ -24,7 +24,7 @@
                     </div>
                     <input name="search" type="search" placeholder="Search"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full pl-10 p-2.5"
-                        placeholder="Search" required>
+                        placeholder="Search">
                 </div>
                 <button type="submit"
                     class="p-2.5 ml-2 text-sm font-medium text-white bg-jevon_ganteng_sekali rounded-lg border hover:bg-jevon_ganteng_gila focus:ring-4 focus:outline-none">
@@ -41,7 +41,8 @@
                 @foreach ($blogs as $bl)
                     <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
                         <div class="flex-shrink-0">
-                            <img class="h-48 w-full object-cover" src="/images/{{ $blogs['blogimage'] }}" alt="blog image">
+                            <img src="{{ asset('storage/' . $bl->blogimage) }}" class="h-48 w-full object-cover"
+                                alt="{{ $bl->blogimage }}">
                         </div>
                         <div class="flex-1 bg-white p-6 flex flex-col justify-between">
                             <div class="flex-1">

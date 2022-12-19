@@ -68,7 +68,7 @@
                 </thead>
                 <tbody>
                     @php($i = 0)
-                    @foreach ($products as $pr)
+                    @foreach ($product as $pr)
                         <tr
                             class="bg-white border-b dark:bg-gray-400 dark:border-gray-500 hover:bg-gray-50 dark:hover:bg-gray-300">
                             <td class="p-4 w-4">
@@ -165,8 +165,8 @@
 
                         </div>
 
-                        <div class="col-span-12 sm:col-span-6">
-                        </div>
+                        <div class="col-span-12 sm:col-span-6"></div>
                     </div>
                 </div>
+            </form>
 </x-app-layout>
