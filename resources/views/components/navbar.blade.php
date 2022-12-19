@@ -1,11 +1,22 @@
 <nav class="bg-white px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 shadow-lg">
     <div class="container flex flex-wrap items-center justify-between mx-auto">
-        <a href="/" class="flex items-center">
+        <a href="/home" class="flex items-center">
             <img src="/images/Logo2.svg" class="h-6 mr-3 sm:h-9" alt="Wood Company Logo">
         </a>
         <div class="flex md:order-2">
-            <button type="button"
-                class="text-white uppercase font-heading tracking-widest text-sm bg-jevon_ganteng_sekali hover:bg-jevon_ganteng_gila focus:ring-4 focus:outline-none focus:ring-jevon_ganteng_amat px-5 py-2.5 text-center mr-3 md:mr-0">Login</button>
+            @auth
+                <form action="/logout" method="POST">
+                    @csrf
+                    <button type="submit"
+                        class="text-white uppercase font-heading tracking-widest text-sm bg-jevon_ganteng_sekali hover:bg-jevon_ganteng_gila px-5 py-2.5 text-center mr-3 md:mr-0">Logout</button>
+                </form>
+            @endauth
+            @guest
+                <a href="/login">
+                    <button type="button"
+                        class="text-white uppercase font-heading tracking-widest text-sm bg-jevon_ganteng_sekali hover:bg-jevon_ganteng_gila px-5 py-2.5 text-center mr-3 md:mr-0">Login</button>
+                </a>
+            @endguest
             <button data-collapse-toggle="navbar-sticky" type="button"
                 class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                 aria-controls="navbar-sticky" aria-expanded="false">

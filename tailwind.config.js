@@ -26,5 +26,8 @@ module.exports = {
     plugins: [
         require("@tailwindcss/typography"),
         require("@tailwindcss/forms"),
+        /*  require("tailwindcss-plugins/pagination")({
+            color: colors["jevon_ganteng_sekali"],
+        }), */
     ],
 };

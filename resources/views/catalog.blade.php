@@ -6,12 +6,16 @@
         <h2>Catalog Page</h2>
     </div>
 
-    <form action="" method="GET" class="form-inline w-25 d-flex gap-2">
-        <input type="search" placeholder="Search" name="search" class="form-control">
-        <button type="submit" class="btn btn-outline-success">Search</button>
+    <form action="" method="GET" netlify>
+        <div>
+            <label class="block text-base tracking-tight text-gray-600">Search</label>
+            <input name="search" type="search" placeholder="Search"
+                class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700" />
+            <button type="submit">Search</button>
+        </div>
     </form>
 
-    <table class="table table-striped">
+    <table class="table">
         <thead>
             <tr>
                 <th scope="col">No</th>
@@ -44,7 +48,7 @@
 
     <h1>Supplier</h1>
 
-    <table class="table table-striped">
+    <table class="table">
         <thead>
             <tr>
                 <th scope="col">No</th>

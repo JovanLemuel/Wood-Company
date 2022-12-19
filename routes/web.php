@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/catalog', [ProductController::class, 'index']);
+Route::get('/catalog', [ProductController::class, 'catalog']);
 
-Route::get('/catalog/{product}', [ProductController::class, 'showcatalog']);
+Route::get('/catalog/{product}', [ProductController::class, 'catalog']);
 
 Route::get('/', function () {
     return view('home');
@@ -24,10 +26,6 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('home');
-});
-
-Route::get('/catalog', function () {
-    return view('catalog');
 });
 
 Route::get('/cart', function () {
