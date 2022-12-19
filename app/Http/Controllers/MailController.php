@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreMailRequest;
 use App\Http\Requests\UpdateMailRequest;
 use App\Models\Mail;
+use Illuminate\Http\Request;
 
 class MailController extends Controller
 {
@@ -13,9 +14,17 @@ class MailController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if ($request->has('search')) {
+            return view('mail', [
+                'mails' => Mail::where('mail_name', 'like', '%' . $request->search . '%')->orWhere('mail_email', 'like', '%' . $request->search . '%')->paginate(),
+            ]);
+        } else {
+            return view('mail', [
+                'mails' => Mail::paginate(3)
+            ]);
+        }
     }
 
     /**
@@ -43,13 +52,12 @@ class MailController extends Controller
         ]);
 
         Mail::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'product_image' => $request->file('product_image')->store('productimage', 'public'),
-            'supplier_id' => $request->supplier_id
+            'mail_name' => $request->mail_name,
+            'mail_email' => $request->mail_email,
+            'mail_message' => $request->mail_message
         ]);
 
-        return redirect('/catalog');
+        return redirect('/contact');
     }
 
     /**
@@ -60,7 +68,10 @@ class MailController extends Controller
      */
     public function show(Mail $mail)
     {
-        //
+        return view('showmail', [
+            'pagetitle' => 'Mail',
+            'mail' => $mail
+        ]);
     }
 
     /**
@@ -92,8 +103,13 @@ class MailController extends Controller
      * @param  \App\Models\Mail  $mail
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Mail $mail)
+    public function destroy($id)
     {
-        //
+        $mail = Mail::findOrFail($id);
+
+        $mail->delete();
+
+        // back() or redirect("/catalog")
+        return redirect("/contact");
     }
 }

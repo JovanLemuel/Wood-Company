@@ -19,13 +19,13 @@ class ProductController extends Controller
     {
         if ($request->has('search')) {
             return view('catalog', [
-                'products' => Product::where('name', 'like', '%' . $request->search . '%')->orWhere('supplier_name', 'like', '%' . $request->search . '%')->paginate(),
-                'suppliers' => Supplier::whereRelation('product', 'name', 'like', '%' . $request->search . '%')->get()
+                'products' => Product::where('name', 'like', '%' . $request->search . '%')->paginate(),
+                // 'suppliers' => Supplier::whereRelation('product', 'name', 'like', '%' . $request->search . '%')->get()
             ]);
         } else {
             return view('catalog', [
                 'products' => Product::paginate(3),
-                'suppliers' => Supplier::paginate(3)
+                // 'suppliers' => Supplier::paginate(3)
             ]);
         }
     }

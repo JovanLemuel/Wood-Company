@@ -27,7 +27,7 @@
                             d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
                         </path>
                     </svg>
-                    jevon@gmail.com
+                    jevonganteng@gmail.com
                 </a>
                 <div class="flex items-center my-2">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -51,23 +51,24 @@
             </div>
 
             <div>
-                <form method="POST" name="contact" netlify>
+                <form action="{{ route('mails.store') }}" method="POST" name="contact" netlify>
+                    @csrf
                     <div>
-                        <label class="block text-base tracking-tight text-gray-600">Name</label>
-                        <input name="name" type="text" placeholder="Name" required
+                        <label for="" class="block text-base tracking-tight text-gray-600">Name</label>
+                        <input name="mail_name" type="text" placeholder="Name" required
                             class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700" />
                     </div>
                     <div class="mt-6">
-                        <label class="block text-base tracking-tight text-gray-600">Email address</label>
-                        <input name="email" type="email" placeholder="your@email.com" required
+                        <label for="" class="block text-base tracking-tight text-gray-600">Email address</label>
+                        <input name="mail_email" type="email" placeholder="Email" required
                             class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700" />
                     </div>
                     <div class="mt-6">
-                        <label class="block text-base tracking-tight text-gray-600">Message</label>
-                        <textarea name="message" placeholder="Your message" required
+                        <label for="" class="block text-base tracking-tight text-gray-600">Message</label>
+                        <textarea name="mail_message" placeholder="Your message" required
                             class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700"></textarea>
                     </div>
-                    <button
+                    <button type="submit"
                         class="inline-block bg-jevon_ganteng_sekali hover:bg-jevon_ganteng_gila text-white uppercase text-sm tracking-widest font-heading px-8 py-4 mt-6">
                         Send message
                     </button>

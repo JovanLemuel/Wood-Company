@@ -4,6 +4,13 @@
             <img src="/images/Logo2.svg" class="h-6 mr-3 sm:h-9" alt="Wood Company Logo">
         </a>
         <div class="flex md:order-2">
+            @if (Auth::check() && Auth::user()->status == 'admin')
+                <a class="mr-4" href="/dashboard">
+                    <button type="button"
+                        class="text-white uppercase font-heading tracking-widest text-sm bg-jevon_ganteng_sekali hover:bg-jevon_ganteng_gila px-5 py-2.5 text-center mr-3 md:mr-0">Dashboard</button>
+                </a>
+            @endif
+
             @auth
                 <form action="/logout" method="POST">
                     @csrf

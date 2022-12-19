@@ -36,7 +36,19 @@ class PartnerController extends Controller
      */
     public function store(StorePartnerRequest $request)
     {
-        //
+        $this->validate($request, [
+            'partner_name' => 'required|string|max:50',
+            'partner_location' => 'required|string|max:50',
+            'partner_image' => 'required|image'
+        ]);
+
+        Partner::create([
+            'partner_name' => $request->partner_name,
+            'partner_location' => $request->partner_location,
+            'partner_image' => $request->file('partner_image')->store('partnerimage', 'public')
+        ]);
+
+        return redirect('/dashboard');
     }
 
     /**
@@ -47,7 +59,10 @@ class PartnerController extends Controller
      */
     public function show(Partner $partner)
     {
-        //
+        return view('showpartner', [
+            'pagetitle' => 'Partner',
+            'partner' => $partner
+        ]);
     }
 
     /**
@@ -56,9 +71,12 @@ class PartnerController extends Controller
      * @param  \App\Models\Partner  $partner
      * @return \Illuminate\Http\Response
      */
-    public function edit(Partner $partner)
+    public function edit($id)
     {
-        //
+        return view("updatepartner", [
+            "partner" => Partner::findOrFail($id),
+            "pagetitle" => "Update Partner"
+        ]);
     }
 
     /**
@@ -68,9 +86,25 @@ class PartnerController extends Controller
      * @param  \App\Models\Partner  $partner
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePartnerRequest $request, Partner $partner)
+    public function update(UpdatePartnerRequest $request, $id)
     {
-        //
+        $partner = Partner::findOrFail($id);
+
+        if ($request->file('partner_image')) {
+            unlink('storage/' . $partner->partner_image);
+            $partner->update([
+                "partner_name" => $request->partner_name,
+                "partner_location" => $request->partner_location,
+                "partner_image" => $request->file('partner_image')->store('partnerimage', 'public')
+            ]);
+        } else {
+            $partner->update([
+                "partner_name" => $request->partner_name,
+                "partner_location" => $request->partner_location
+            ]);
+        }
+
+        return redirect("/dashboard");
     }
 
     /**
@@ -79,8 +113,13 @@ class PartnerController extends Controller
      * @param  \App\Models\Partner  $partner
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Partner $partner)
+    public function destroy($id)
     {
-        //
+        $partner = Partner::findOrFail($id);
+
+        $partner->delete();
+
+        // back() or redirect("/catalog")
+        return redirect("/dashboard");
     }
 }

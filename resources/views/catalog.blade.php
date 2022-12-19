@@ -9,26 +9,42 @@
         <div class="relative max-w-7xl mx-auto">
             <div class="text-center py-12 px-6 mt-12">
                 <h1 class="font-display font-bold text-5xl mb-6">Catalog</h1>
-                <p class="max-w-lg mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel arcu commodo,
-                    sodales
-                    nibh sed, efficitur sapien.</p>
+                <p class="max-w-lg mx-auto">Browse our wide range of wood selections.</p>
             </div>
 
             {{-- @if (Auth::check() && Auth::user()->status == 'admin')
                 <a href="{{ route('products.create') }}">Create Product</a>
             @endif --}}
 
-            <form action="" method="GET" netlify>
-                <div>
-                    <label class="block text-base tracking-tight text-gray-600">Search</label>
+
+            <form action="" method="GET" netlify class="flex items-center">
+                <label for="simple-search" class="sr-only">Search</label>
+                <div class="relative w-full">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
+                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
                     <input name="search" type="search" placeholder="Search"
-                        class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700" />
-                    <button type="submit">Search</button>
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full pl-10 p-2.5"
+                        placeholder="Search" required>
                 </div>
+                <button type="submit"
+                    class="p-2.5 ml-2 text-sm font-medium text-white bg-jevon_ganteng_sekali rounded-lg border hover:bg-jevon_ganteng_gila focus:ring-4 focus:outline-none">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <span class="sr-only">Search</span>
+                </button>
             </form>
 
-            @foreach ($products as $pr)
-                <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+            <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+                @foreach ($products as $pr)
                     <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
                         <div class="flex-shrink-0">
                             <img class="h-48 w-full object-cover" src="/images/{{ $products['productimage'] }}"
@@ -37,14 +53,14 @@
                         <div class="flex-1 bg-white p-6 flex flex-col justify-between">
                             <div class="flex-1">
                                 <a href="#" class="block mt-2">
-                                    <p class="text-xl font-semibold text-gray-900">{{ $pr['name'] }}</p>
-                                    <p class="mt-3 text-base text-gray-500">{{ $pr['description'] }}</p>
+                                    <p class="text-xl text-center font-semibold text-gray-900">{{ $pr['name'] }}</p>
+                                    <p class="mt-3 text-center text-base text-gray-500">{{ $pr['description'] }}</p>
                                 </a>
                             </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
 
