@@ -14,7 +14,7 @@ class Product extends Model
         "name",
         "description",
         "image_name",
-        "supplier_name"
+        "supplier_id"
     ];
 
     public function supplier(): BelongsTo

@@ -6,6 +6,10 @@
         <h2>Catalog Page</h2>
     </div>
 
+    @if (Auth::check() && Auth::user()->status == 'admin')
+        <a href="{{ route('products.create') }}">Create Product</a>
+    @endif
+
     <form action="" method="GET" netlify>
         <div>
             <label class="block text-base tracking-tight text-gray-600">Search</label>
@@ -23,6 +27,9 @@
                 <th scope="col">Description</th>
                 <th scope="col">Supplier Name</th>
                 <th scope="col">Photo</th>
+                @if (Auth::check() && Auth::user()->status == 'admin')
+                    <th>Action</th>
+                @endif
             </tr>
         </thead>
         <tbody>
@@ -35,9 +42,23 @@
                     <td>{{ $pr['description'] }}</td>
                     <td>{{ $pr->supplier->name }}</td>
                     <td>
-                        <img src="/images/{{ $pr['image_name'] }}" class="mx-auto d-block rounded-3" width="140"
-                            height="130">
+                        <img src="{{ asset('storage/' . $product->image_name) }}" class="mx-auto d-block rounded-3"
+                            width="140" height="130">
                     </td>
+                    @if (Auth::check() && Auth::user()->status == 'admin')
+                        <td>
+                            <div class="mt-2">
+                                <a href="{{ route('products.edit', $product->id) }}">Update</a>
+                            </div>
+                            <div class="mt-2">
+                                <form action="{{ route('products.destroy', $product->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit">Delete</button>
+                                </form>
+                            </div>
+                        </td>
+                    @endif
                 </tr>
                 @php($i++)
             @endforeach

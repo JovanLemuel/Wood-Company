@@ -16,9 +16,11 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-Route::get('/catalog', [ProductController::class, 'catalog']);
+Route::get('/catalog', [ProductController::class, 'products.index']);
 
 Route::get('/catalog/{product}', [ProductController::class, 'catalog']);
+
+Route::resource('products', ProductController::class)->middleware('admin');
 
 Route::get('/', function () {
     return view('home');
