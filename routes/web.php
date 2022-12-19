@@ -17,9 +17,9 @@ use App\Models\Product;
 |
 */
 
-Route::get('/catalog', [ProductController::class, 'catalog']);
+Route::get('/catalog', [ProductController::class, 'index']);
 
-Route::get('/catalog/{product}', [ProductController::class, 'showcatalog']);
+Route::get('/catalog/{product}', [ProductController::class, 'show']);
 
 Route::resource('products', ProductController::class)->middleware('admin');
 
