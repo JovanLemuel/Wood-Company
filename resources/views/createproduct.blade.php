@@ -28,7 +28,7 @@
         <div class="mb-3">
             <label for="">Supplier</label>
             <select name="supplier_id" id="" class="form-select">
-                @foreach ($suppliers as $suppplier)
+                @foreach ($suppliers as $supplier)
                     <option value="{{ $supplier['id'] }}">{{ $supplier['name'] }}</option>
                 @endforeach
             </select>

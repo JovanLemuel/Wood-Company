@@ -38,14 +38,14 @@ Route::get('/catalog', [ProductController::class, 'index']);
 
 Route::get('/catalog/{product}', [ProductController::class, 'show']);
 
-Route::resource('products', ProductController::class)->middleware('admin');
+Route::resource('products', ProductController::class)->middleware('auth', 'verified');
 
 //blog
 Route::get('/blog', [BlogController::class, 'index']);
 
 Route::get('/blog/{blog}', [BlogController::class, 'show']);
 
-Route::resource('blogs', BlogController::class)->middleware('admin');
+Route::resource('blogs', BlogController::class)->middleware('auth', 'verified');
 
 //contact
 Route::resource('mails', MailController::class);
@@ -55,20 +55,20 @@ Route::get('/contact', function () {
 });
 
 //partner
-Route::resource('partners', PartnerController::class)->middleware('admin');
+Route::resource('partners', PartnerController::class)->middleware('auth', 'verified');
 
 //category
-Route::resource('categorys', CategoryController::class)->middleware('admin');
+Route::resource('categorys', CategoryController::class)->middleware('auth', 'verified');
 
 //supplier
-Route::resource('suppliers', SupplierController::class)->middleware('admin');
+Route::resource('suppliers', SupplierController::class)->middleware('auth', 'verified');
 
 //dashboard
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/dashboard/admin_product', [ProductController::class, 'show'])
+Route::get('/dashboard/admin_product', [ProductController::class, 'admin_product'])
     ->middleware(['auth', 'verified'])->name('admin_product');
 
 Route::get('/dashboard/admin_blog', [BlogController::class, 'show'])

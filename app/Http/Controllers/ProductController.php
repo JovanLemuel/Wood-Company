@@ -138,7 +138,16 @@ class ProductController extends Controller
 
         $product->delete();
 
-        // back() or redirect("/catalog")
-        return redirect("/catalog");
+        return back();
+        // return redirect("/dashboard");
+    }
+
+    public function admin_product()
+    {
+        return view('admin_product', [
+            'pagetitle' => 'Product',
+            'product' => Product::all(),
+            'suppliers' => Supplier::all()
+        ]);
     }
 }

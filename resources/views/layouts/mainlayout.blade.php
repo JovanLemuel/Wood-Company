@@ -6,6 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wood Company | @yield('title')</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
     <link rel="preconnect" href="https://fonts.gstatic.com">
