@@ -50,7 +50,7 @@
                             {{-- <img class="h-48 w-full object-cover" src="/images/{{ $products['productimage'] }}"
                                 alt="product image"> --}}
                             <img src="{{ asset('storage/productimage/' . $pr->product_image) }}"
-                                class="h-48 w-full object-cover" alt="{{ $pr->product_image }}">
+                                class="h-48 w-full object-none" alt="{{ $pr->product_image }}">
                         </div>
                         <div class="flex-1 bg-white p-6 flex flex-col justify-between">
                             <div class="flex-1">

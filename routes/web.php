@@ -20,6 +20,11 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
+
+Route::get('/createproduct', [ProductController::class, 'create']);
+
+Route::get('/updateproduct', [ProductController::class, 'update']);
+
 // home
 Route::get('/', function () {
     return view('home');

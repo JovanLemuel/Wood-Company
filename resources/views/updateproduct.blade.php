@@ -1,36 +1,48 @@
 @extends('layouts/mainlayout')
 @section('content')
-    <h1>{{ $pagetitle }}</h1>
-
-    <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <input type="hidden" name="_method" value="PATCH">
-        <div class="mb-3">
-            <label for="">Name</label>
-            <input type="text" name="name" class="form-control" value="{{ $product->name }}">
-            @if ($errors->has('name'))
-                <p class="error">{{ $errors->first('name') }}</p>
-            @endif
+    <div class="text-center pt-20 py-12 px-6 mt-12">
+        <h1 class="font-display font-bold text-5xl mb-6">Create Product</h1>
+    </div>
+    <div class="container mx-auto px-6 mb-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" name="_method" value="PATCH">
+                <div class="mb-3">
+                    <label for="" class="block text-base tracking-tight text-gray-600">Name</label>
+                    <input type="text" name="name"
+                        class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700" value="{{ $product->name }}">
+                    @if ($errors->has('name'))
+                        <p class="error">{{ $errors->first('name') }}</p>
+                    @endif
+                </div>
+                <div class="mb-3">
+                    <label for="" class="block text-base tracking-tight text-gray-600">Description</label>
+                    <input type="text" name="description"
+                        class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700"
+                        value="{{ $product->description }}">
+                    @if ($errors->has('description'))
+                        <p class="error">{{ $errors->first('description') }}</p>
+                    @endif
+                </div>
+                <div class="mb-3">
+                    <label for="" class="block text-base tracking-tight text-gray-600">Image</label>
+                    <img src="{{ asset('storage/' . $product->product_image) }}" alt="">
+                    <input type="file" name="product_image" class="mt-2 w-full form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="" class="block text-base tracking-tight text-gray-600">Supplier</label>
+                    <select type="text" name="supplier_name" class="mt-2 form-select w-full py-3">
+                        @foreach ($suppliers as $sr)
+                            <option value="{{ $sr['id'] }}">{{ $sr->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <button type="submit"
+                    class="inline-block bg-jevon_ganteng_sekali hover:bg-jevon_ganteng_gila text-white uppercase text-sm tracking-widest font-heading px-8 py-4 mt-6">
+                    Submit
+                </button>
+            </form>
         </div>
-        <div class="mb-3">
-            <label for="">Description</label>
-            <input type="text" name="description" class="form-control" value="{{ $product->description }}">
-            @if ($errors->has('description'))
-                <p class="error">{{ $errors->first('description') }}</p>
-            @endif
-        </div>
-        <div class="mb-3">
-            <label for="">Image</label>
-            <br>
-            <img src="{{ asset('storage/' . $product->product_image) }}" alt="">
-            <input type="file" name="product_image" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label for="">Supplier</label>
-            <input type="text" name="supplier_name" class="form-control" value="{{ $product->supplier->name }}" readonly>
-        </div>
-        <button type="submit">Submit</button>
-    </form>
-
-    <div class="h-screen"></div>
+    </div>
 @endsection

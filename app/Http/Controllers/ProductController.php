@@ -39,6 +39,7 @@ class ProductController extends Controller
     {
         return view('createproduct', [
             'pagetitle' => "Create Product",
+            'product' => Product::all(),
             'suppliers' => Supplier::all()
         ]);
     }
@@ -51,21 +52,24 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        $this->validate($request, [
+
+        /* $this->validate($request, [
             'name' => 'required|string|max:50',
             'description' => 'required|string|max:250',
             'product_image' => 'required|image',
             'supplier_id' => 'required'
-        ]);
+        ]); */
 
         Product::create([
+            'product' => Product::all(),
+            'suppliers' => Supplier::all(),
             'name' => $request->name,
             'description' => $request->description,
             'product_image' => $request->file('product_image')->store('productimage', 'public'),
             'supplier_id' => $request->supplier_id
         ]);
 
-        return redirect('/catalog');
+        return redirect('/dashboard/admin_product');
     }
 
     /**
@@ -94,7 +98,7 @@ class ProductController extends Controller
     {
         return view("updateproduct", [
             "product" => Product::findOrFail($id),
-            "pagetitle" => "Update Product"
+            'suppliers' => Supplier::all(),
         ]);
     }
 
