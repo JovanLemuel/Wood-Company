@@ -98,8 +98,10 @@ class ProductController extends Controller
     {
         return view("updateproduct", [
             "product" => Product::findOrFail($id),
-            'suppliers' => Supplier::all(),
+            "suppliers" => Supplier::all(),
         ]);
+
+        return redirect('/dashboard/admin_product');
     }
 
     /**

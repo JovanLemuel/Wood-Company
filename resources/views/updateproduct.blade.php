@@ -1,7 +1,7 @@
 @extends('layouts/mainlayout')
 @section('content')
     <div class="text-center pt-20 py-12 px-6 mt-12">
-        <h1 class="font-display font-bold text-5xl mb-6">Create Product</h1>
+        <h1 class="font-display font-bold text-5xl mb-6">Update Product</h1>
     </div>
     <div class="container mx-auto px-6 mb-24">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
