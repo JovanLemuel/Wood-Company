@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Supplier;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
@@ -40,7 +41,9 @@ class ProductController extends Controller
         return view('createproduct', [
             'pagetitle' => "Create Product",
             'product' => Product::all(),
-            'suppliers' => Supplier::all()
+            'suppliers' => Supplier::all(),
+            'categories' => Category::all()
+
         ]);
     }
 
@@ -66,7 +69,8 @@ class ProductController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'product_image' => $request->file('product_image')->store('productimage', 'public'),
-            'supplier_id' => $request->supplier_id
+            'supplier_id' => $request->supplier_id,
+            'category_id' => $request->category_id
         ]);
 
         return redirect('/dashboard/admin_product');
@@ -99,6 +103,7 @@ class ProductController extends Controller
         return view("updateproduct", [
             "product" => Product::findOrFail($id),
             "suppliers" => Supplier::all(),
+            "categories" => Category::all()
         ]);
 
         return redirect('/dashboard/admin_product');
@@ -120,16 +125,20 @@ class ProductController extends Controller
             $product->update([
                 "name" => $request->name,
                 "description" => $request->description,
-                "product_image" => $request->file('product_image')->store('productimage', 'public')
+                "product_image" => $request->file('product_image')->store('productimage', 'public'),
+                "supplier_id" => $request->supplier_id,
+                "category_id" => $request->category_id
             ]);
         } else {
             $product->update([
                 "name" => $request->name,
-                "description" => $request->description
+                "description" => $request->description,
+                "supplier_id" => $request->supplier_id,
+                "category_id" => $request->category_id
             ]);
         }
 
-        return redirect("/catalog");
+        return redirect("/dashboard/admin_product");
     }
 
     /**
@@ -153,7 +162,8 @@ class ProductController extends Controller
         return view('admin_product', [
             'pagetitle' => 'Product',
             'product' => Product::all(),
-            'suppliers' => Supplier::all()
+            'suppliers' => Supplier::all(),
+            'categories' => Category::all()
         ]);
     }
 }

@@ -14,11 +14,17 @@ class Product extends Model
         "name",
         "description",
         "product_image",
-        "supplier_id"
+        "supplier_id",
+        "category_id"
     ];
 
     public function supplier(): BelongsTo
     {
         return $this->belongsTo(Supplier::class, 'supplier_id', 'id');
+    }
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 }

@@ -46,6 +46,11 @@
                         {{ __('Mail') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('admin_genre')" :active="request()->routeIs('admin_genre')">
+                        {{ __('Genre') }}
+                    </x-nav-link>
+                </div>
 
             </div>
 

@@ -58,6 +58,9 @@
                         <th scope="col" class="py-3 px-6">
                             Supplier Name
                         </th>
+                        <th scope="col" class="py-3 px-6">
+                            Category Name
+                        </th>
                         <th scope="col" class="py-3 px-12 text-center">
                             Edit
                         </th>
@@ -79,7 +82,7 @@
                             </td>
                             <td class="flex items-center py-4 px-6 whitespace-nowrap">
 
-                                <img src="{{ asset('storage/productimage/' . $pr->product_image) }}" class="w-48 h-full"
+                                <img src="{{ asset('storage/productimage/' . $pr->product_image) }}" class="w-48 h-full object-scaledown"
                                     alt="{{ $pr->product_image }}">
 
                             </td>
@@ -93,10 +96,19 @@
                                 <div class="flex items-center">
                                     @foreach ($suppliers as $sr)
                                         @if ($sr->id == $pr->supplier_id)
-                                            {{ $sr->name }}
+                                            {{ $sr->supplier_name }}
                                         @endif
                                     @endforeach
                                     {{-- {{ $pr->supplier->name }} --}}
+                                </div>
+                            </td>
+                            <td class="py-4 px-6 text-gray-900">
+                                <div class="flex items-center">
+                                    @foreach ($categories as $ct)
+                                        @if ($ct->id == $pr->category_id)
+                                            {{ $ct->category_name }}
+                                        @endif
+                                    @endforeach
                                 </div>
                             </td>
 

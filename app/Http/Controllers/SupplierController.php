@@ -25,7 +25,10 @@ class SupplierController extends Controller
      */
     public function create()
     {
-        //
+        return view('createsupplier', [
+            'pagetitle' => "Create Supplier",
+            'suppliers' => Supplier::all(),
+        ]);
     }
 
     /**
@@ -36,7 +39,14 @@ class SupplierController extends Controller
      */
     public function store(StoreSupplierRequest $request)
     {
-        //
+        Supplier::create([
+            'suppliers' => Supplier::all(),
+            'supplier_name' => $request->supplier_name,
+            'phone' => $request->phone,
+            'city' => $request->city
+        ]);
+
+        return redirect('/dashboard/admin_supplier');
     }
 
     /**
@@ -47,7 +57,10 @@ class SupplierController extends Controller
      */
     public function show(Supplier $supplier)
     {
-        //
+        return view('admin_supplier', [
+            'pagetitle' => 'Supplier',
+            'supplier' => $supplier
+        ]);
     }
 
     /**
@@ -56,9 +69,14 @@ class SupplierController extends Controller
      * @param  \App\Models\Supplier  $supplier
      * @return \Illuminate\Http\Response
      */
-    public function edit(Supplier $supplier)
+    public function edit($id)
     {
-        //
+        return view("updatesupplier", [
+            "supplier" => Supplier::findOrFail($id),
+            "suppliers" => Supplier::all(),
+        ]);
+
+        return redirect('/dashboard/admin_supplier');
     }
 
     /**
@@ -68,9 +86,17 @@ class SupplierController extends Controller
      * @param  \App\Models\Supplier  $supplier
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateSupplierRequest $request, Supplier $supplier)
+    public function update(UpdateSupplierRequest $request, $id)
     {
-        //
+        $supplier = Supplier::findOrFail($id);
+
+            $supplier->update([
+                "supplier_name" => $request->supplier_name,
+                "phone" => $request->phone,
+                "city" => $request->city,
+            ]);
+
+        return redirect("/dashboard/admin_supplier");
     }
 
     /**
@@ -79,9 +105,13 @@ class SupplierController extends Controller
      * @param  \App\Models\Supplier  $supplier
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Supplier $supplier)
+    public function destroy($id)
     {
-        //
+        $supplier = Supplier::findOrFail($id);
+
+        $supplier->delete();
+
+        return back();
     }
 
     public function admin_supplier()

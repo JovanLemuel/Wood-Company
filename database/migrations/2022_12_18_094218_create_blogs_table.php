@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string("blog_content");
             $table->string("blog_type");
             $table->string("blog_image");
+            $table->foreignIdFor(\App\Models\Genre::class);
             $table->timestamps();
         });
     }

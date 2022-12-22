@@ -35,7 +35,15 @@
                     <label for="" class="block text-base tracking-tight text-gray-600">Supplier</label>
                     <select name="supplier_id" id="" class="mt-2 form-select w-full py-3">
                         @foreach ($suppliers as $sr)
-                            <option value="{{ $sr['id'] }}">{{ $sr->name }}</option>
+                            <option value="{{ $sr['id'] }}">{{ $sr->supplier_name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="block text-base tracking-tight text-gray-600">Category</label>
+                    <select name="category_id" id="" class="mt-2 form-select w-full py-3">
+                        @foreach ($categories as $ct)
+                            <option value="{{ $ct['id'] }}">{{ $ct->category_name }}</option>
                         @endforeach
                     </select>
                 </div>

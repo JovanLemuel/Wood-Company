@@ -25,7 +25,11 @@ class PartnerController extends Controller
      */
     public function create()
     {
-        //
+        return view('createpartner', [
+            'pagetitle' => "Create Partner",
+            'partner' => Partner::all(),
+
+        ]);
     }
 
     /**
@@ -36,11 +40,11 @@ class PartnerController extends Controller
      */
     public function store(StorePartnerRequest $request)
     {
-        $this->validate($request, [
+        /* $this->validate($request, [
             'partner_name' => 'required|string|max:50',
             'partner_location' => 'required|string|max:50',
             'partner_image' => 'required|image'
-        ]);
+        ]); */
 
         Partner::create([
             'partner_name' => $request->partner_name,
@@ -48,7 +52,7 @@ class PartnerController extends Controller
             'partner_image' => $request->file('partner_image')->store('partnerimage', 'public')
         ]);
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/admin_partner');
     }
 
     /**
@@ -59,7 +63,7 @@ class PartnerController extends Controller
      */
     public function show(Partner $partner)
     {
-        return view('showpartner', [
+        return view('admin_partner', [
             'pagetitle' => 'Partner',
             'partner' => $partner
         ]);
@@ -75,8 +79,10 @@ class PartnerController extends Controller
     {
         return view("updatepartner", [
             "partner" => Partner::findOrFail($id),
-            "pagetitle" => "Update Partner"
+            "partners" => Partner::all(),
         ]);
+
+        return redirect('/dashboard/admin_partner');
     }
 
     /**
@@ -104,7 +110,7 @@ class PartnerController extends Controller
             ]);
         }
 
-        return redirect("/dashboard");
+        return redirect("/dashboard/admin_partner");
     }
 
     /**
@@ -119,7 +125,15 @@ class PartnerController extends Controller
 
         $partner->delete();
 
-        // back() or redirect("/catalog")
-        return redirect("/dashboard");
+        return back();
+        // return redirect("/dashboard");
+    }
+
+    public function admin_partner()
+    {
+        return view('admin_partner', [
+            'pagetitle' => 'Partner',
+            'partner' => Partner::all()
+        ]);
     }
 }

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreBlogRequest;
 use App\Http\Requests\UpdateBlogRequest;
+use App\Policies\GenrePolicy;
 
 class BlogController extends Controller
 {
@@ -36,7 +38,8 @@ class BlogController extends Controller
     {
         return view('createblog', [
             'pagetitle' => "Create Blog",
-            'blogs' => Blog::all()
+            'blogs' => Blog::all(),
+            'genres' => Genre::all()
         ]);
     }
 
@@ -48,21 +51,22 @@ class BlogController extends Controller
      */
     public function store(StoreBlogRequest $request)
     {
-        $this->validate($request, [
+        /* $this->validate($request, [
             'blog_title' => 'required|string|max:50',
             'blog_content' => 'required|string|max:250',
             'blog_type' => 'required|string|max:50',
             'blog_image' => 'required|image',
-        ]);
+        ]); */
 
         Blog::create([
             'blog_title' => $request->blog_title,
             'blog_content' => $request->blog_content,
             'blog_type' => $request->blog_type,
             'blog_image' => $request->file('blog_image')->store('blogimage', 'public'),
+            'genre_id' => $request->genre_id,
         ]);
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/admin_blog');
     }
 
     /**
@@ -73,7 +77,7 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        return view('showcatalog', [
+        return view('admin_blog', [
             'pagetitle' => 'Blog',
             'blog' => $blog
         ]);
@@ -110,17 +114,19 @@ class BlogController extends Controller
                 "blog_title" => $request->blog_title,
                 "blog_content" => $request->blog_content,
                 "blog_type" => $request->blog_type,
-                "blog_image" => $request->file('blog_image')->store('blogimage', 'public')
+                "blog_image" => $request->file('blog_image')->store('blogimage', 'public'),
+                "genre_id" => $request->genre_id,
             ]);
         } else {
             $blog->update([
                 "blog_title" => $request->blog_title,
                 "blog_content" => $request->blog_content,
                 "blog_type" => $request->blog_type,
+                "genre_id" => $request->genre_id,
             ]);
         }
 
-        return redirect("/dashboard");
+        return redirect("/dashboard/admin_blog");
     }
 
     /**
@@ -135,7 +141,16 @@ class BlogController extends Controller
 
         $blog->delete();
 
-        // back() or redirect("/catalog")
-        return redirect("/dashboard");
+        return back();
+        // return redirect("/dashboard");
+    }
+
+    public function admin_blog()
+    {
+        return view('admin_blog', [
+            'pagetitle' => 'Blog',
+            'blog' => Blog::all(),
+            'genres' => Genre::all()
+        ]);
     }
 }

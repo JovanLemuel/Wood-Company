@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\GenreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +23,22 @@ use App\Http\Controllers\ProfileController;
 
 //create update
 Route::get('/createproduct', [ProductController::class, 'create']);
-
 Route::get('/updateproduct', [ProductController::class, 'update']);
+
+Route::get('/createblog', [BlogController::class, 'create']);
+Route::get('/updateblog', [BlogController::class, 'update']);
+
+Route::get('/createcategory', [CategoryController::class, 'create']);
+Route::get('/updatecategory', [CategoryController::class, 'update']);
+
+Route::get('/updategenre', [GenreController::class, 'update']);
+Route::get('/creategenre', [GenreController::class, 'create']);
+
+Route::get('/createsupplier', [SupplierController::class, 'create']);
+Route::get('/updatesupplier', [SupplierController::class, 'update']);
+
+Route::get('/createpartner', [PartnerController::class, 'create']);
+Route::get('/updatepartner', [PartnerController::class, 'update']);
 
 // home
 Route::get('/', function () {
@@ -41,14 +56,10 @@ Route::get('/#', function () {
 //catalog
 Route::get('/catalog', [ProductController::class, 'index']);
 
-Route::get('/catalog/{product}', [ProductController::class, 'show']);
-
 Route::resource('products', ProductController::class)->middleware('auth', 'verified');
 
 //blog
 Route::get('/blog', [BlogController::class, 'index']);
-
-Route::get('/blog/{blog}', [BlogController::class, 'show']);
 
 Route::resource('blogs', BlogController::class)->middleware('auth', 'verified');
 
@@ -63,10 +74,13 @@ Route::get('/contact', function () {
 Route::resource('partners', PartnerController::class)->middleware('auth', 'verified');
 
 //category
-Route::resource('categorys', CategoryController::class)->middleware('auth', 'verified');
+Route::resource('categories', CategoryController::class)->middleware('auth', 'verified');
 
 //supplier
 Route::resource('suppliers', SupplierController::class)->middleware('auth', 'verified');
+
+//genre
+Route::resource('genres', GenreController::class)->middleware('auth', 'verified');
 
 //dashboard
 Route::get('/dashboard', function () {
@@ -76,20 +90,23 @@ Route::get('/dashboard', function () {
 Route::get('/dashboard/admin_product', [ProductController::class, 'admin_product'])
     ->middleware(['auth', 'verified'])->name('admin_product');
 
-Route::get('/dashboard/admin_blog', [BlogController::class, 'show'])
+Route::get('/dashboard/admin_blog', [BlogController::class, 'admin_blog'])
     ->middleware(['auth', 'verified'])->name('admin_blog');
 
-Route::get('/dashboard/admin_mail', [MailController::class, 'show'])
+Route::get('/dashboard/admin_mail', [MailController::class, 'admin_mail'])
     ->middleware(['auth', 'verified'])->name('admin_mail');
 
-Route::get('/dashboard/admin_partner', [PartnerController::class, 'show'])
+Route::get('/dashboard/admin_partner', [PartnerController::class, 'admin_partner'])
     ->middleware(['auth', 'verified'])->name('admin_partner');
 
 Route::get('/dashboard/admin_supplier', [SupplierController::class, 'admin_supplier'])
     ->middleware(['auth', 'verified'])->name('admin_supplier');
 
-Route::get('/dashboard/admin_category', [CategoryController::class, 'show'])
+Route::get('/dashboard/admin_category', [CategoryController::class, 'admin_category'])
     ->middleware(['auth', 'verified'])->name('admin_category');
+
+Route::get('/dashboard/admin_genre', [GenreController::class, 'admin_genre'])
+    ->middleware(['auth', 'verified'])->name('admin_genre');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

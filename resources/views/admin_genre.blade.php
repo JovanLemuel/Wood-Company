@@ -2,7 +2,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Suppliers') }}
+            {{ __('Genres') }}
         </h2>
 
     </x-slot>
@@ -15,15 +15,15 @@
                 <div class="relative my-5 mx-6 p-4">
                     <input type="text" id="table-search-products"
                         class="block p-2 pl-10 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-white-500"
-                        placeholder="Search for products">
+                        placeholder="Search for genres">
                 </div>
                 <div class="flex justify-between items-center pb-4 bg-gray-200  ">
-                    <a href="/createsupplier"
+                    <a href="/creategenre"
                         class="mt-5 mr-14 font-sans text-zinc-50 bg-slate-900 hover:bg-slate-700
                         focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium
                         rounded-lg text-sm px-5 py-2 text-center inline-flex items-center">
                         <span class="self-center text-sm font-semibold whitespace-nowrap hidden md:block">New
-                            Supplier</span>
+                            Genre</span>
 
                     </a>
 
@@ -49,12 +49,6 @@
                         <th scope="col" class="p-4">
                             Name
                         </th>
-                        <th scope="col" class="py-3 px-6">
-                            Phone
-                        </th>
-                        <th scope="col" class="py-3 px-6">
-                            City
-                        </th>
                         <th scope="col" class="py-3 px-12 text-center">
                             Edit
                         </th>
@@ -66,7 +60,7 @@
                 </thead>
                 <tbody>
                     @php($i = 0)
-                    @foreach ($suppliers as $sr)
+                    @foreach ($genres as $gr)
                         <tr class="bg-white border-b">
                             <td class="p-4 w-4">
                                 <div class="flex items-center">
@@ -75,17 +69,11 @@
                                 </div>
                             </td>
                             <td class="py-4 px-6 text-gray-900">
-                                {{ $sr->supplier_name }}
-                            </td>
-                            <td class="py-4 px-6 text-gray-900">
-                                {{ $sr->phone }}
-                            </td>
-                            <td class="py-4 px-6 text-gray-900">
-                                {{ $sr->city }}
+                                {{ $gr->genre_name }}
                             </td>
 
                             <td class="py-4 px-6 text-center">
-                                <a href="{{ route('suppliers.edit', $sr->id) }}"
+                                <a href="{{ route('genres.edit', $gr->id) }}"
                                     class=" text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Edit
                                 </a>
                             </td>
@@ -93,12 +81,12 @@
 
 
                             <td class="py-4 px-6 text-center">
-                                <form action="{{ route('suppliers.destroy', $sr->id) }}" method="POST">
+                                <form action="{{ route('genres.destroy', $gr->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit"
                                         class=" text-white bg-red-800 hover:bg-red-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Delete
-                                        supplier</button>
+                                        genre</button>
 
                                 </form>
                             </td>

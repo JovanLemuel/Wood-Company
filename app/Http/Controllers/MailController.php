@@ -68,7 +68,7 @@ class MailController extends Controller
      */
     public function show(Mail $mail)
     {
-        return view('showmail', [
+        return view('admin_mail', [
             'pagetitle' => 'Mail',
             'mail' => $mail
         ]);
@@ -110,6 +110,14 @@ class MailController extends Controller
         $mail->delete();
 
         // back() or redirect("/catalog")
-        return redirect("/contact");
+        return back();
+    }
+
+    public function admin_mail()
+    {
+        return view('admin_mail', [
+            'pagetitle' => 'Mail',
+            'mails' => Mail::all()
+        ]);
     }
 }

@@ -50,15 +50,21 @@
                             {{-- <img class="h-48 w-full object-cover" src="/images/{{ $products['productimage'] }}"
                                 alt="product image"> --}}
                             <img src="{{ asset('storage/productimage/' . $pr->product_image) }}"
-                                class="h-48 w-full object-none" alt="{{ $pr->product_image }}">
+                                class="object-fill h-48 w-full" alt="{{ $pr->product_image }}">
                         </div>
                         <div class="flex-1 bg-white p-6 flex flex-col justify-between">
-                            <div class="flex-1">
-                                <a href="#" class="block mt-2">
-                                    <p class="text-xl text-center font-semibold text-gray-900">{{ $pr['name'] }}</p>
-                                    <p class="mt-3 text-center text-base text-gray-500">{{ $pr['description'] }}</p>
+                            <div class="flex-1 mt-2">
+                                <p class="text-xl text-center font-semibold text-gray-900">{{ $pr['name'] }}</p>
+                                <p class="mt-3 text-center text-base text-gray-500">{{ $pr['description'] }}</p>
+                                <p class="mt-3 text-center text-base text-gray-500">
+                                </p>
+
                                 </a>
                             </div>
+                            <a href="/contact"
+                                class="inline-block bg-jevon_ganteng_sekali hover:bg-jevon_ganteng_gila text-white text-center uppercase text-sm tracking-widest font-heading px-8 py-4 mt-6">
+                                learn more
+                            </a>
                         </div>
                     </div>
                 @endforeach

@@ -25,7 +25,11 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('createcategory', [
+            'pagetitle' => "Create Category",
+            'category' => Category::all(),
+
+        ]);
     }
 
     /**
@@ -36,7 +40,12 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        //
+        Category::create([
+            'category' => Category::all(),
+            'category_name' => $request->category_name,
+        ]);
+
+        return redirect('/dashboard/admin_category');
     }
 
     /**
@@ -47,7 +56,10 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('admin_category', [
+            'pagetitle' => 'Category',
+            'category' => $category
+        ]);
     }
 
     /**
@@ -56,9 +68,14 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
-        //
+        return view("updatecategory", [
+            "category" => Category::findOrFail($id),
+            "categories" => Category::all(),
+        ]);
+
+        return redirect('/dashboard/admin_category');
     }
 
     /**
@@ -68,9 +85,15 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCategoryRequest $request, Category $category)
+    public function update(UpdateCategoryRequest $request, $id)
     {
-        //
+        $category = Category::findOrFail($id);
+
+        $category->update([
+            "category_name" => $request->category_name,
+        ]);
+
+        return redirect("/dashboard/admin_category");
     }
 
     /**
@@ -79,8 +102,20 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-        //
+        $category = Category::findOrFail($id);
+
+        $category->delete();
+
+        return back();
+    }
+
+    public function admin_category()
+    {
+        return view('admin_category', [
+            'pagetitle' => 'Category',
+            'categories' => Category::all()
+        ]);
     }
 }
