@@ -83,4 +83,12 @@ class SupplierController extends Controller
     {
         //
     }
+
+    public function admin_supplier()
+    {
+        return view('admin_supplier', [
+            'pagetitle' => 'Supplier',
+            'suppliers' => Supplier::all()
+        ]);
+    }
 }

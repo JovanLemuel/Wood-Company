@@ -20,7 +20,7 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-
+//create update
 Route::get('/createproduct', [ProductController::class, 'create']);
 
 Route::get('/updateproduct', [ProductController::class, 'update']);
@@ -85,7 +85,7 @@ Route::get('/dashboard/admin_mail', [MailController::class, 'show'])
 Route::get('/dashboard/admin_partner', [PartnerController::class, 'show'])
     ->middleware(['auth', 'verified'])->name('admin_partner');
 
-Route::get('/dashboard/admin_supplier', [SupplierController::class, 'show'])
+Route::get('/dashboard/admin_supplier', [SupplierController::class, 'admin_supplier'])
     ->middleware(['auth', 'verified'])->name('admin_supplier');
 
 Route::get('/dashboard/admin_category', [CategoryController::class, 'show'])
