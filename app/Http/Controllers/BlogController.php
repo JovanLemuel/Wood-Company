@@ -93,6 +93,7 @@ class BlogController extends Controller
     {
         return view("updateblog", [
             "blog" => Blog::findOrFail($id),
+            "genres" => Genre::all(),
             "pagetitle" => "Update Blog"
         ]);
     }

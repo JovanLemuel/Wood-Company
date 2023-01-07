@@ -47,13 +47,13 @@
                             ID
                         </th>
                         <th scope="col" class="p-4">
+                            Image
+                        </th>
+                        <th scope="col" class="py-3 px-6">
                             Name
                         </th>
                         <th scope="col" class="py-3 px-6">
                             Location
-                        </th>
-                        <th scope="col" class="py-3 px-6">
-                            Image
                         </th>
                         <th scope="col" class="py-3 px-12 text-center">
                             Edit
@@ -99,7 +99,7 @@
                                     @method('DELETE')
                                     <button type="submit"
                                         class=" text-white bg-red-800 hover:bg-red-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Delete
-                                        product</button>
+                                        partner</button>
 
                                 </form>
                             </td>

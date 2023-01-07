@@ -1,17 +1,17 @@
 @extends('layouts/mainlayout')
 @section('content')
     <div class="text-center pt-20 py-12 px-6 mt-12">
-        <h1 class="font-display font-bold text-5xl mb-6">Update Partner</h1>
+        <h1 class="font-display font-bold text-5xl mb-6">Update Genre</h1>
     </div>
     <div class="container mx-auto px-6 mb-24">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            <form action="{{ route('genres.update', $genres->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('genres.update', $genre->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="_method" value="PATCH">
                 <div class="mb-3">
                     <label for="" class="block text-base tracking-tight text-gray-600">Name</label>
-                    <input type="text" name="supplier_name"
-                        class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700" value="{{ $genres->genre_name }}">
+                    <input type="text" name="genre_name"
+                        class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700" value="{{ $genre->genre_name }}">
                 </div>
 
                 {{-- <div class="mb-3">

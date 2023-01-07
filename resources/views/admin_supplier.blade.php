@@ -15,7 +15,7 @@
                 <div class="relative my-5 mx-6 p-4">
                     <input type="text" id="table-search-products"
                         class="block p-2 pl-10 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-white-500"
-                        placeholder="Search for products">
+                        placeholder="Search for suppliers">
                 </div>
                 <div class="flex justify-between items-center pb-4 bg-gray-200  ">
                     <a href="/createsupplier"

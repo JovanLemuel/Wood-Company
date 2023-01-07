@@ -10,8 +10,8 @@
                 <input type="hidden" name="_method" value="PATCH">
                 <div class="mb-3">
                     <label for="" class="block text-base tracking-tight text-gray-600">Name</label>
-                    <input type="text" name="supplier_name"
-                        class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700" value="{{ $supplier->supplier_name }}">
+                    <input type="text" name="category_name"
+                        class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700" value="{{ $category->category_name }}">
                 </div>
                 {{-- <div class="mb-3">
                     <label for="" class="block text-base tracking-tight text-gray-600">Image</label>

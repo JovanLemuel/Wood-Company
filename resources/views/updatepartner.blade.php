@@ -5,25 +5,24 @@
     </div>
     <div class="container mx-auto px-6 mb-24">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            <form action="{{ route('partners.update', $partners->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('partners.update', $partner->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="_method" value="PATCH">
                 <div class="mb-3">
                     <label for="" class="block text-base tracking-tight text-gray-600">Name</label>
-                    <input type="text" name="supplier_name"
-                        class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700" value="{{ $category->partner_name }}">
+                    <input type="text" name="partner_name"
+                        class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700" value="{{ $partner->partner_name }}">
                 </div>
                 <div class="mb-3">
                     <label for="" class="block text-base tracking-tight text-gray-600">Location</label>
-                    <input type="text" name="phone"
+                    <input type="text" name="partner_location"
                         class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700"
-                        value="{{ $category->partner_location }}">
+                        value="{{ $partner->partner_location }}">
                 </div>
                 <div class="mb-3">
                     <label for="" class="block text-base tracking-tight text-gray-600">Image</label>
-                    <input type="text" name="city"
-                        class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700"
-                        value="{{ $category->partner_image }}">
+                    <img src="{{ asset('storage/' . $partner->partner_image) }}" alt="">
+                    <input type="file" name="partner_image" class="mt-2 w-full form-control">
                 </div>
                 {{-- <div class="mb-3">
                     <label for="" class="block text-base tracking-tight text-gray-600">Image</label>
